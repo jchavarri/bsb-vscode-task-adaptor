@@ -1,5 +1,7 @@
 # bsb-vscode-task-adaptor
 
+[![NPM](https://nodei.co/npm/bsb-vscode-task-adaptor.png)](https://npmjs.org/package/bsb-vscode-task-adaptor)
+
 A small Node.js script that reads the output from BuckleScript build tool (`bsb`) and adapts it so it can be consumed from `vscode` [tasks](https://code.visualstudio.com/docs/editor/tasks), so they appear in the "Problems" panel of `vscode` that shows project diagnostics.
 
 ![Demo](docs/bsb-vscode-adaptor-demo.gif)
@@ -72,7 +74,7 @@ yarn add bsb-vscode-task-adaptor --dev
 
 3. Run the task by pressing ⇧⌘B or running "Run Build Task" from the Terminal menu.
 
-You should see the diagnostics
+You should see the diagnostics appearing in `vscode` "Problems" panel.
 
 ### Why
 
