@@ -8,7 +8,9 @@ A small Node.js script that reads the output from BuckleScript build tool (`bsb`
 
 ## Getting started
 
-1. Install the adaptor:
+Just three steps.
+
+a. Install the package:
 
 ```bash
 npm install --save-dev bsb-vscode-task-adaptor
@@ -20,7 +22,13 @@ or with `yarn`:
 yarn add bsb-vscode-task-adaptor --dev
 ```
 
-2. Create a file `tasks.json` in `.vscode` folder:
+b. In your project main folder, create a folder `.vscode` and inside, a file `tasks.json` like the one shown below.
+The `json` will have `npm` and commands and two arguments passed in `args`:
+
+1. `parse-bsb` is the name of this package script.
+2. The command that `parse-bsb` will run by changing the second element passed to `args` (`bsb -make-world -w` in the example below).
+
+#### Example `tasks.json`
 
 ```json
 {
@@ -62,8 +70,7 @@ yarn add bsb-vscode-task-adaptor --dev
           {
             "regexp": "^(?:(?:Parse\\s+)?([Ww]arning|[Ee]rror)(?:\\s+\\d+)?:)?\\s+(.*)$",
             "severity": 1,
-            "message": 2,
-            "loop": true
+            "message": 2
           }
         ]
       }
@@ -72,11 +79,11 @@ yarn add bsb-vscode-task-adaptor --dev
 }
 ```
 
-3. Run the task by pressing ⇧⌘B or running "Run Build Task" from the Terminal menu.
+c. Run the newly created task by pressing ⇧⌘B or from "Run Build Task" in the "Terminal" menu.
 
 You should see the diagnostics appearing in `vscode` "Problems" panel.
 
-### Why
+## Why
 
 Some of the reasons why this tool might be useful for you:
 
